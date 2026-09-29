@@ -363,25 +363,39 @@ El camión transporta los elementos al almacén. Al llegar al almacén, todo su 
 
 Por ejemplo, si el camión tiene a Knight Rider y a Bumblebee, mientras que en el almacén está la arena a granel, cuando el camión llega éste queda vacío y en el almacén quedan Bumblebee, arena a granel y Knight Rider.
 
+
+
+
 El viaje puede ser por la ruta 9 o por caminos vecinales. Esta elección se hace al momento de realizar el transporte.
 
 Para que el transporte pueda ser realizado debe cumplirse con las siguientes condiciones: el camino debe soportar el viaje:
 * La ruta 9 soporta viajes según el requerimiento "puede circular en ruta" (resuelto anteriormente) con un nivel de peligrosidad de 20.
 * Los caminos vecinales soportan viajes de vehículos que no superen el peso máximo permitido, el cual es configurable. 
 
+
+
+
+
 Se pide que el camión entienda el mensaje `transportar(destino, camino)`. Donde destino es el almacén (pero se parametriza porque podrían aparecer otros lugares) y el camino es una de las dos opciones (ruta 9 o caminos vecinales, pero también se debe pensar que pueda haber otros caminos polimórficos).
 
 Es importante realizar las validaciones correspondientes.
+
+
 
 #### Ejemplo
 
 Para todos los casos, el almacén tiene a Knight Rider y residuos radiactivos.  
 El camión arranca teniendo a Bumblebee en modo auto y arena a granel con 50 kg.
 
+
+
 #### Caso: ruta 9 exitoso
 El camión puede transportar sin problemas por la ruta 9 hacia el almacén.  
 En el almacén quedan Knight Rider, residuos radiactivos, Bumblebee y arena a granel.  
 El camión queda vacío.
+
+
+
 
 #### Caso: ruta 9 fallido por peligrosidad
 Cambiar el modo de Bumblebee a robot.  
@@ -389,11 +403,24 @@ El camión no puede transportar por la ruta 9 hacia el almacén (fallará el niv
 En el almacén quedan Knight Rider y residuos radiactivos.  
 En el camión quedan Bumblebee y arena a granel.
  
+
+
+
+
 #### Caso: ruta 9 fallido por exceso de peso
 Cambiar el peso de la arena a granel a 2000 kg.  
 El camión no puede transportar por la ruta 9 hacia el almacén (fallará por exceso de peso del camión).  
 En el almacén quedan Knight Rider y residuos radiactivos.  
 En el camión quedan Bumblebee y arena a granel.
+
+
+
+
+
+
+
+
+
 
 #### Caso: caminos vecinales exitoso
 Configurar los caminos vecinales con un máximo de 2000 kg de soporte.  
@@ -401,11 +428,21 @@ El camión puede transportar sin problemas por los caminos vecinales hacia el al
 En el almacén quedan Knight Rider, residuos radiactivos, Bumblebee y arena a granel.  
 El camión queda vacío.
 
+
+
+
+
+
 #### Caso: caminos vecinales fallido
 Configurar los caminos vecinales con un máximo de 300 kg de soporte.  
 El camión no puede transportar por los caminos vecinales hacia el almacén.  
 En el almacén quedan Knight Rider y residuos radiactivos.  
 En el camión quedan Bumblebee y arena a granel.
+
+
+
+
+
 
 
 ## 4 Reflexionar sobre los conceptos

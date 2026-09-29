@@ -2,6 +2,7 @@ import cosas.*
 
 object camion {
 	const property cosas = #{}
+
 		
 	method cargar(unaCosa) {
 		self.validarCargar(unaCosa)    // esta bien que de error si ya esta cargado o lo tengo que ignorar?
@@ -92,4 +93,79 @@ object camion {
 	method tenerAccidente(){
 		cosas.forEach({cosa => cosa.accidente()})
 	}
+
+
+	method llegarADestino(destino){
+		destino.cosas().addAll(self.cosas())
+		cosas.clear()
+	}
+
+
+	method transportar(destino, camino){
+		self.validarTransportar(camino)
+		self.llegarADestino(destino)
+	}
+
+
+	method validarTransportar(camino){
+		if (not camino.puedeCircularAca(self)) {
+			self.error("el camión no puede transportar por este camino")
+		}
+	}
 }
+
+
+
+
+
+
+
+
+object almacen{
+
+	const property cosas = #{} 
+
+	method cosas(){
+		return cosas
+	}
+
+	method depositar(cosa){
+		cosas.add(cosa)
+	}
+}
+
+
+
+
+object ruta9 {
+
+	method puedeCircularAca(transporte){
+		return transporte.puedeCircular(20)
+	}
+}
+
+
+
+
+
+object caminosVecinales {
+
+	var pesoMaxPermitido = 0
+
+
+	method pesoMaxPermitido(){
+		return pesoMaxPermitido
+	}
+
+
+	method pesoMaxPermitido(peso){
+		pesoMaxPermitido = peso 
+	}
+
+
+	method puedeCircularAca(transporte){
+		return transporte.pesoTotal() <= self.pesoMaxPermitido()
+	}
+
+}
+

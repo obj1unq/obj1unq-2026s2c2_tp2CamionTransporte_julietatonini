@@ -261,4 +261,76 @@ describe "Camion de transporte" {
         assert.equals(0, paqueteLadrillos.cantidadLadrillos())
         assert.notThat(bateriaAntiaerea.misiles())
     }
+
+
+
+    test "Caso: ruta 9 exitoso"{
+        almacen.depositar(knightRider)
+        almacen.depositar(residuos)
+        camion.cargar(bumblebee)
+        arena.peso(50)
+        camion.cargar(arena)
+
+        // todos los casos tienen hasta aca
+
+        camion.transportar(almacen, ruta9)
+        assert.equals(#{knightRider, residuos, bumblebee, arena}, almacen.cosas())
+        assert.that(camion.cosas().isEmpty())
+    }
+
+
+
+    test "Caso: ruta 9 fallido por peligrosidad"{
+        almacen.depositar(knightRider)
+        almacen.depositar(residuos)
+        camion.cargar(bumblebee)
+        arena.peso(50)
+        camion.cargar(arena)
+        bumblebee.actualizarEstado(robot)
+        assert.throwsException({camion.transportar(almacen, ruta9)})
+        assert.equals(#{knightRider, residuos}, almacen.cosas())
+        assert.equals(#{bumblebee, arena}, camion.cosas())
+    }
+
+
+
+
+    test "Caso: ruta 9 fallido por exceso de peso"{
+        almacen.depositar(knightRider)
+        almacen.depositar(residuos)
+        camion.cargar(bumblebee)
+        arena.peso(2000)
+        camion.cargar(arena)
+        assert.throwsException({camion.transportar(almacen, ruta9)})
+        assert.equals(#{knightRider, residuos}, almacen.cosas())
+        assert.equals(#{bumblebee, arena}, camion.cosas())
+    }
+
+
+
+    test "Caso: caminos vecinales exitoso"{
+        almacen.depositar(knightRider)
+        almacen.depositar(residuos)
+        camion.cargar(bumblebee)
+        arena.peso(50)
+        camion.cargar(arena)
+        caminosVecinales.pesoMaxPermitido(2000)
+        camion.transportar(almacen, caminosVecinales)
+        assert.equals(#{knightRider, residuos, bumblebee, arena}, almacen.cosas())
+        assert.that(camion.cosas().isEmpty())
+    }
+
+
+
+    test "Caso: caminos vecinales fallido"{
+        almacen.depositar(knightRider)
+        almacen.depositar(residuos)
+        camion.cargar(bumblebee)
+        arena.peso(50)
+        camion.cargar(arena)
+        caminosVecinales.pesoMaxPermitido(300)
+        assert.throwsException({camion.transportar(almacen, caminosVecinales)})
+        assert.equals(#{knightRider, residuos}, almacen.cosas())
+        assert.equals(#{bumblebee, arena}, camion.cosas())
+    }
 }
