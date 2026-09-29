@@ -43,4 +43,22 @@ describe "Camion de transporte" {
         assert.that(camion.algunoQuePesa(800))
         assert.notThat(camion.algunoQuePesa(500))
     }
+
+
+
+    test "el camion no esta excedido de peso" {
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        assert.notThat(camion.estaExcedido())
+    }
+
+
+    test "el camion esta excedido de peso" {
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(400)
+        camion.cargar(paqueteLadrillos)
+        assert.that(camion.estaExcedido())
+    }
+
 }

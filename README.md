@@ -97,6 +97,13 @@ El camión se encuentra excedido de peso si el peso total es superior al peso m�
 
 Si el camión tiene a Bumblebee y un paquete de 300 ladrillos, entonces el peso total es 2400 y no está excedido de peso. Pero si el paquete de ladrillos contiene 400 ladrillos, entonces el peso total es 2600 y sí está excedido.
 
+
+
+
+
+
+
+
 ### 2.5 El de nivel
 
 Encontrar una cosa cargada cuyo nivel de peligrosidad coincida exactamente con el valor indicado.

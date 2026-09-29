@@ -37,4 +37,14 @@ object camion {
 	method algunoQuePesa(peso){
 		return cosas.any({cosa => cosa.peso() == peso})
 	}
+
+
+	method pesoTotal(){
+		return 1000 + cosas.sum({cosa => cosa.peso()})
+	}
+
+
+	method estaExcedido(){
+		return self.pesoTotal() > 2500 
+	}
 }
