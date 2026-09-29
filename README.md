@@ -42,6 +42,14 @@ Poder cargar y descargar cosas, considerando que no se puede cargar algo ya carg
 - Intentar cargar a Knight Rider, no se puede porque ya está cargado.
 - Intentar descargar a Bumblebee, no se puede porque no estaba cargado.
 
+
+
+
+
+
+
+
+
 ### 2.2 Todo peso par
 
 Saber si el peso de cada uno de los objetos cargados es un número par.
