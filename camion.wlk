@@ -27,4 +27,9 @@ object camion {
 			self.error("El elemento no se encuentra cargado")
 		}
 	}
+
+
+	method todoPesoPar(){
+		return cosas.all({cosa => cosa.peso() % 2 == 0}) 
+	}
 }

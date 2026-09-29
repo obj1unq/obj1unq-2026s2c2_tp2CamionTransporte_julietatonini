@@ -49,7 +49,6 @@ Poder cargar y descargar cosas, considerando que no se puede cargar algo ya carg
 
 
 
-
 ### 2.2 Todo peso par
 
 Saber si el peso de cada uno de los objetos cargados es un número par.
@@ -57,6 +56,16 @@ Saber si el peso de cada uno de los objetos cargados es un número par.
 ### Ejemplo
 - Para un camión cargado con Bumblebee y 50 kg de arena a granel todo peso es par.
 - En cambio, si la arena a granel pesa 51 kg entonces no.
+
+
+
+
+
+
+
+
+
+
 
 ### 2.3 Hay alguno que pesa 
 Saber si el camión tiene alguna cosa que pesa exactamente una cantidad de kilogramos dada.

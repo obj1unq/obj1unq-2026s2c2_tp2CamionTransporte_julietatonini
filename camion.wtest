@@ -15,4 +15,21 @@ describe "Camion de transporte" {
         assert.throwsException({camion.cargar(knightRider)})
         assert.throwsException({camion.descargar(bumblebee)})
     }
+
+
+
+    test "todo peso par" {
+        camion.cargar(bumblebee)
+        arena.peso(50)
+        camion.cargar(arena)
+        assert.that(camion.todoPesoPar())
+    }
+
+
+    test "todo peso no es par" {
+        camion.cargar(bumblebee)
+        arena.peso(51)
+        camion.cargar(arena)
+        assert.notThat(camion.todoPesoPar())
+    }
 }
