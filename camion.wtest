@@ -78,4 +78,16 @@ describe "Camion de transporte" {
         assert.equals(bateriaAntiaerea, camion.cargaDeNivel(100))
     }
 
+
+
+    test "cosas peligrosas"{
+        camion.cargar(knightRider)
+        camion.cargar(bateriaAntiaerea)
+        assert.equals(#{bateriaAntiaerea}, camion.conExcesoDePeligrosidad(15))
+        assert.equals(#{bateriaAntiaerea}, camion.masPeligrosasQue(bumblebee))
+        assert.equals(#{knightRider, bateriaAntiaerea}, camion.conExcesoDePeligrosidad(2))
+        assert.equals(#{knightRider, bateriaAntiaerea}, camion.masPeligrosasQue(paqueteLadrillos))
+        assert.equals(#{}, camion.conExcesoDePeligrosidad(200))
+        assert.equals(#{}, camion.masPeligrosasQue(residuos))
+    }
 }

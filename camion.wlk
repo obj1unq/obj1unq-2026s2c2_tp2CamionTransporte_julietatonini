@@ -52,4 +52,14 @@ object camion {
 	method cargaDeNivel(nivelPeligrosidad){
 		return cosas.find({cosa => cosa.nivelPeligrosidad() == nivelPeligrosidad})
 	}
+
+
+	method conExcesoDePeligrosidad(nivelPeligrosidad){
+		return cosas.filter({cosa => cosa.nivelPeligrosidad() > nivelPeligrosidad})
+	}
+
+
+	method masPeligrosasQue(otraCosa){
+		return self.conExcesoDePeligrosidad(otraCosa.nivelPeligrosidad())
+	}
 }

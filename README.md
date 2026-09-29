@@ -145,6 +145,15 @@ Para un camión cargado con Knight Rider y la batería antiaérea cargada:
 - No hay cosas más peligrosas que 200.
 - No hay nada más peligroso que los residuos radiactivos.
 
+
+
+
+
+
+
+
+
+
 ### 2.7 Puede circular en ruta
 Saber si el camión puede circular en ruta, lo que ocurre si no está excedido de peso y, además, ninguno de los objetos cargados supera el nivel máximo de peligrosidad indicado.
 
