@@ -220,4 +220,45 @@ describe "Camion de transporte" {
         camion.cargar(arena)
         assert.equals(4, camion.cantidadTotalDeBultos())
     }
+
+
+
+
+    test "Accidente: caso 1"{
+        contenedor.cargar(knightRider)
+        contenedor.cargar(bumblebee)
+        camion.cargar(contenedor)
+        residuos.peso(30)
+        embalaje.envuelveA(residuos)
+        camion.cargar(embalaje)
+        arena.peso(50)
+        camion.cargar(arena)
+        paqueteLadrillos.cantidadLadrillos(100)
+        camion.cargar(paqueteLadrillos)
+        camion.cargar(bateriaAntiaerea)
+        camion.tenerAccidente()
+        assert.equals(robot, bumblebee.estado())
+        assert.equals(30, residuos.peso())
+        assert.equals(70, arena.peso())
+        assert.equals(88, paqueteLadrillos.cantidadLadrillos())
+        assert.notThat(bateriaAntiaerea.misiles())
+    }
+
+
+
+    test "Accidente: caso 2"{
+        bumblebee.actualizarEstado(robot)
+        camion.cargar(bumblebee)
+        residuos.peso(30)
+        camion.cargar(residuos)
+        paqueteLadrillos.cantidadLadrillos(10)
+        camion.cargar(paqueteLadrillos)
+        bateriaAntiaerea.actualizarMisiles()
+        camion.cargar(bateriaAntiaerea)
+        camion.tenerAccidente()
+        assert.equals(auto, bumblebee.estado())
+        assert.equals(45, residuos.peso())
+        assert.equals(0, paqueteLadrillos.cantidadLadrillos())
+        assert.notThat(bateriaAntiaerea.misiles())
+    }
 }

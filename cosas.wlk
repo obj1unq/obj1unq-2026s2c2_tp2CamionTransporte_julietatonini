@@ -10,6 +10,9 @@ object knightRider {
 	method cantidadBultos(){
 		return 1
 	}
+
+
+	method accidente(){}
 }
 
 
@@ -36,6 +39,11 @@ object arena{
 	method cantidadBultos(){
 		return 1
 	}
+
+
+	method accidente(){
+		self.peso(self.peso() + 20)     //esta bien? o mejor: peso = self.peso() + 20
+	}
 }
 
 
@@ -59,6 +67,10 @@ object bumblebee {
 	}
 
 
+	method estado(){
+		return estado
+	}
+
 	method actualizarEstado(nuevoEstado){
 		estado = nuevoEstado
 	}
@@ -66,6 +78,15 @@ object bumblebee {
 
 	method cantidadBultos(){
 		return 2
+	}
+
+
+	method accidente(){
+		if (estado == auto) {
+			estado = robot
+		} else {
+			estado = auto
+		}
 	}
 }
 
@@ -131,6 +152,15 @@ object paqueteLadrillos {
 			return 3
 		}
 	}
+
+
+	method accidente(){
+		if (self.cantidadLadrillos() < 12) {
+			self.cantidadLadrillos(0)
+		} else {
+			self.cantidadLadrillos(self.cantidadLadrillos() - 12)    //esta bien hecho asi?
+		}
+	}
 }
 
 
@@ -176,6 +206,13 @@ object bateriaAntiaerea {
 			return 1
 		}
 	}
+
+
+	method accidente(){
+		if (misiles) {
+			self.actualizarMisiles()
+		}
+	}
 }
 
 
@@ -203,6 +240,11 @@ object residuos {
 
 	method cantidadBultos(){
 		return 1
+	}
+
+
+	method accidente(){
+		self.peso(self.peso() + 15)
 	}
 }
 
@@ -245,6 +287,11 @@ object contenedor {
 	method cantidadBultos(){
 		return 1 + cosas.sum({cosa => cosa.cantidadBultos()})
 	}
+
+
+	method accidente(){
+		cosas.forEach({cosa => cosa.accidente()})
+	}
 }
 
 
@@ -280,4 +327,7 @@ object embalaje {
 	method cantidadBultos(){
 		return 2
 	}
+
+
+	method accidente(){}
 }

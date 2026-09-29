@@ -332,6 +332,7 @@ Al producirse un accidente:
 - El paquete de ladrillos queda con 88 ladrillos.
 - La batería antiaérea queda descargada.
 
+
 ##### Caso 2
 Suponiendo que el camión tiene:
 - Bumblebee en modo robot.
@@ -344,7 +345,17 @@ Al producirse un accidente:
 - Residuos radiactivos quedan con 45 kg de peso.
 - El paquete de ladrillos queda con 0 ladrillos.
 - La batería antiaérea queda descargada.
-  
+
+
+
+
+
+
+
+
+
+
+
 
 ## 3 Transporte
 
