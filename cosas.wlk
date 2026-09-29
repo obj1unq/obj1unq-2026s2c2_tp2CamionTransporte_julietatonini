@@ -167,3 +167,66 @@ object residuos {
 		return 200
 	}
 }
+
+
+
+
+
+object contenedor {
+
+	const property cosas = #{}
+
+
+	method cargar(unaCosa) {
+		self.validarCargar(unaCosa)
+		cosas.add(unaCosa)
+	}
+
+
+	method validarCargar(unaCosa){
+		if (cosas.contains(unaCosa)) {
+			self.error("El elemento ya se encuentra cargado")
+		}
+	}
+
+
+	method peso(){
+		return 100 + cosas.sum({cosa => cosa.peso()})
+	}
+
+
+	method nivelPeligrosidad(){
+		if (cosas.isEmpty()){
+			return 0 
+		} else {
+		return cosas.map({cosa => cosa.nivelPeligrosidad()}).max()
+		}
+	}
+}
+
+
+
+object embalaje {
+
+	var envuelveA = null 
+
+
+	method envuelveA(){
+		return envuelveA
+	}
+
+
+	method envuelveA(unaCosa){
+		envuelveA = unaCosa
+	}
+
+
+	method peso(){
+		return envuelveA.peso() 
+	}
+
+
+	method nivelPeligrosidad(){
+		return envuelveA.nivelPeligrosidad() / 2
+	}
+}

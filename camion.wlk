@@ -64,7 +64,7 @@ object camion {
 	}
 
 
-	method puedeCircular(nivelPeligrosidad){
+	method puedeCircular(nivelPeligrosidad){		
 		return not self.estaExcedido() && self.conExcesoDePeligrosidad(nivelPeligrosidad).isEmpty()
 	}
 }

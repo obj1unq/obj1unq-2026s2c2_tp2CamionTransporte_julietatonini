@@ -118,4 +118,38 @@ describe "Camion de transporte" {
         camion.cargar(bumblebee)
         assert.notThat(camion.puedeCircular(20))
     }
+
+
+
+    test "más elementos a trasportar: contenedor 1"{
+        assert.equals(100, contenedor.peso())
+        assert.equals(0, contenedor.nivelPeligrosidad())
+    }
+
+
+    test "más elementos a trasportar: contenedor 2"{
+        contenedor.cargar(knightRider)
+        arena.peso(50)
+        contenedor.cargar(arena)
+        assert.equals(650, contenedor.peso())
+        assert.equals(10, contenedor.nivelPeligrosidad())
+    }
+
+
+
+    test "más elementos a trasportar: embalaje 1"{
+        embalaje.envuelveA(knightRider)
+        assert.equals(500, embalaje.peso())
+        assert.equals(5, embalaje.nivelPeligrosidad())
+    }
+
+
+
+    test "más elementos a trasportar: embalaje 2"{
+        bumblebee.actualizarEstado(auto)
+        embalaje.envuelveA(bumblebee)
+        assert.equals(800, embalaje.peso())
+        assert.equals(7.5, embalaje.nivelPeligrosidad())
+    }
+
 }
