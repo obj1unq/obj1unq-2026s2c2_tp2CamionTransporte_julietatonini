@@ -152,4 +152,14 @@ describe "Camion de transporte" {
         assert.equals(7.5, embalaje.nivelPeligrosidad())
     }
 
+
+
+    test "Tiene algo cuyo peso está en un rango"{
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        assert.that(camion.tieneAlgoEntre(5, 700))
+        assert.that(camion.tieneAlgoEntre(5, 1000))
+        assert.notThat(camion.tieneAlgoEntre(900, 1000))
+    }
 }

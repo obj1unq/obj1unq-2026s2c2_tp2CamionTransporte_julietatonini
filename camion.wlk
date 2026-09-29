@@ -67,4 +67,9 @@ object camion {
 	method puedeCircular(nivelPeligrosidad){		
 		return not self.estaExcedido() && self.conExcesoDePeligrosidad(nivelPeligrosidad).isEmpty()
 	}
+
+	
+	method tieneAlgoEntre(peso1, peso2){
+		return cosas.any({cosa => cosa.peso() >= peso1 && cosa.peso() <= peso2})
+	}
 }

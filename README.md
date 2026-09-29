@@ -186,6 +186,12 @@ Agregar los siguientes elementos para ser transportadas por el camión:
 - Si el embalaje de seguridad envuelve a Knight Rider, su peso es 500 y su peligrosidad es 5.
 - Si el embalaje de seguridad envuelve a Bumblebee en modo auto, su peso es 800 y su peligrosidad 7,5.
 
+
+
+
+
+
+
 ### 2.9 Tiene algo cuyo peso está en un rango
 
 Saber si el camión tiene algo cuyo peso está entre dos valores (mínimo y máximo).
@@ -195,6 +201,14 @@ Para un camión cargado con Bumblebee y un paquete de 300 ladrillos:
 - Tiene algo que pesa entre 5 y 700.
 - Tiene algo que pesa entre 5 y 1000.
 - No tiene algo que pese entre 900 y 1000.
+
+
+
+
+
+
+
+
 
 ### 2.10 Elemento más pesado
 
