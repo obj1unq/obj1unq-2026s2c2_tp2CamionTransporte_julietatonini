@@ -452,6 +452,18 @@ En el camión quedan Bumblebee y arena a granel.
 * Describir los polimorfismos asociados a las colecciones: 
 
    - ¿Qué nombre tiene el tipo de los objetos polimórficos?
+
+El tipo tiene de nombre Cosa. 
+
+
    - ¿Qué mensajes componen ese tipo?
+
+Los mensajes peso(), nivelPeligrosidad(), cantidadBultos() y accidente().
+
+
    - ¿Qué objetos son los emisores de los mensajes polimórficos?
-   
+
+   Los emisores de los mensajes polimórficos son camion, contenedor y embalaje. 
+
+
+
