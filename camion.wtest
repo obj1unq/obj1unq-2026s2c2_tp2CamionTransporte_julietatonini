@@ -61,4 +61,21 @@ describe "Camion de transporte" {
         assert.that(camion.estaExcedido())
     }
 
+
+    test "el de nivel"{
+        bumblebee.actualizarEstado(auto)
+        camion.cargar(bumblebee)
+        bateriaAntiaerea.actualizarMisiles()
+        camion.cargar(bateriaAntiaerea)
+        camion.cargar(residuos)
+        assert.equals(bateriaAntiaerea, camion.cargaDeNivel(0))
+        assert.equals(bumblebee, camion.cargaDeNivel(15))
+        assert.equals(residuos, camion.cargaDeNivel(200))
+        assert.throwsException({camion.cargaDeNivel(30)})
+        bumblebee.actualizarEstado(robot)
+        assert.equals(bumblebee, camion.cargaDeNivel(30))
+        bateriaAntiaerea.actualizarMisiles()
+        assert.equals(bateriaAntiaerea, camion.cargaDeNivel(100))
+    }
+
 }

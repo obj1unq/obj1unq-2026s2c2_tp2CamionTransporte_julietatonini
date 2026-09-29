@@ -120,6 +120,13 @@ Para un camión cargado con Bumblebee en modo auto, la batería antiaérea desca
 - Si se carga la batería con misiles y se pide algo de peligrosidad 100 entonces encuentra a la batería.
 
 
+
+
+
+
+
+
+
 ### 2.6 Cosas peligrosas
 
 Saber:
