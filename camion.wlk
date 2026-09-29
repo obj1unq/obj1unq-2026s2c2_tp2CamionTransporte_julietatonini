@@ -72,4 +72,9 @@ object camion {
 	method tieneAlgoEntre(peso1, peso2){
 		return cosas.any({cosa => cosa.peso() >= peso1 && cosa.peso() <= peso2})
 	}
+
+
+	method elMasPesado(){
+		return cosas.max({cosa => cosa.peso()})
+	}
 }

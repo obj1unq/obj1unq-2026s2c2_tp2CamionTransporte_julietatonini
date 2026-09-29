@@ -218,6 +218,13 @@ Conocer el elemento más pesado que tiene el camión, pero atención: se pide _e
 - Para un camión cargado con Bumblebee y un paquete de 300 ladrillos, la cosa más pesada es Bumblebee.
 - Para un camión vacío, no se puede calcular la cosa más pesada.
 
+
+
+
+
+
+
+
 ### 2.11 Pesos
 
 Conocer el peso de cada elemento que tiene el camión.

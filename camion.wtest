@@ -162,4 +162,20 @@ describe "Camion de transporte" {
         assert.that(camion.tieneAlgoEntre(5, 1000))
         assert.notThat(camion.tieneAlgoEntre(900, 1000))
     }
+
+
+
+    test "Elemento más pesado"{
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        assert.equals(bumblebee, camion.elMasPesado())
+    }
+
+
+    test "no se puede calcular el más pesado si no hay elementos"{
+        assert.throwsException({camion.elMasPesado()})
+    }
+
+    
 }
