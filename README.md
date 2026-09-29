@@ -3,6 +3,9 @@
 Una empresa de transporte quiere administrar mejor las cargas que lleva un camión, y para eso requiere un sistema que le permita planificar qué cosas puede llevar el camión considerando dos aspectos: no sobrepasar su capacidad y que el destino sea capaz de recibir la carga. 
 Por otro lado, las cosas que transporta tienen un nivel de peligrosidad, que es usado para impedir que ciertas cosas demasiado peligrosas circulen en determinadas rutas.
 
+
+
+
 ## 1. Elementos a trasportar
 
 A continuación, algunos elementos que puede transportar el camión. De cada uno es importante conocer su peso y nivel de peligrosidad.
@@ -13,6 +16,14 @@ A continuación, algunos elementos que puede transportar el camión. De cada uno
 * Paquete de ladrillos: cada ladrillo pesa 2 kilos, la cantidad de ladrillos que tiene puede variar. La peligrosidad es 2.
 * Batería antiaérea: el peso es 300 kilos si está con los misiles o 200 en otro caso. En cuanto a la peligrosidad es 100 si está con los misiles y 0 en otro caso.
 * Residuos radiactivos: el peso es variable y su peligrosidad es 200.
+
+
+
+
+
+
+
+
 
 
 ## 2. El camión
