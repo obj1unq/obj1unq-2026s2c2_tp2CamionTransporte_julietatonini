@@ -62,4 +62,9 @@ object camion {
 	method masPeligrosasQue(otraCosa){
 		return self.conExcesoDePeligrosidad(otraCosa.nivelPeligrosidad())
 	}
+
+
+	method puedeCircular(nivelPeligrosidad){
+		return not self.estaExcedido() && self.conExcesoDePeligrosidad(nivelPeligrosidad).isEmpty()
+	}
 }

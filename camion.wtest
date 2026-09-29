@@ -90,4 +90,32 @@ describe "Camion de transporte" {
         assert.equals(#{}, camion.conExcesoDePeligrosidad(200))
         assert.equals(#{}, camion.masPeligrosasQue(residuos))
     }
+
+
+
+    test "puede circular en ruta"{
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        assert.that(camion.puedeCircular(20))
+    }
+
+
+
+    test "no puede circular en ruta"{
+        paqueteLadrillos.cantidadLadrillos(400)
+        camion.cargar(paqueteLadrillos)
+        camion.cargar(bumblebee)
+        assert.notThat(camion.puedeCircular(20))
+    }
+
+
+
+    test "no puede circular en ruta 2"{
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        bumblebee.actualizarEstado(robot)
+        camion.cargar(bumblebee)
+        assert.notThat(camion.puedeCircular(20))
+    }
 }

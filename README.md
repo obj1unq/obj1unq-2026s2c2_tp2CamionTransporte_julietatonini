@@ -162,6 +162,16 @@ Saber si el camión puede circular en ruta, lo que ocurre si no está excedido d
 - Pero si el camión tiene el paquete de 400 ladrillos y Bumblebee en modo auto ya no puede circular en la ruta de nivel 20, por estar excedido de peso.
 - Tampoco puede circular en una ruta de nivel 20 si tiene un paquete de 300 ladrillos y Bumblebee está en modo robot.
 
+
+
+
+
+
+
+
+
+
+
 ### 2.8 Más elementos a trasportar
 
 Agregar los siguientes elementos para ser transportadas por el camión:
