@@ -77,6 +77,16 @@ Para un camión cargado con Bumblebee y 50 kg de arena a granel:
 - Si se pregunta si hay algo que pesa 800 debe contestar que sí (es verdadero, por Bumblebee).
 - Si se pregunta si hay algo que pesa 500 debe contestar que no (es falso, ninguno pesa eso).
 
+
+
+
+
+
+
+
+
+
+
 ### 2.4 Peso y exceso de peso
 
 Saber el peso total del camión, que es la suma del peso del camión vacío (tara) y su carga. La tara del camión es de 1000 kilos.
