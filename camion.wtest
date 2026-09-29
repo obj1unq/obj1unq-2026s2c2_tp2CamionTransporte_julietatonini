@@ -185,4 +185,39 @@ describe "Camion de transporte" {
         camion.cargar(paqueteLadrillos)
         assert.equals([800, 600], camion.pesos())
     }
+
+
+
+    test "Total de bultos: caso 1"{
+        contenedor.cargar(knightRider)
+        contenedor.cargar(bumblebee)
+        camion.cargar(contenedor)
+        embalaje.envuelveA(residuos)
+        camion.cargar(embalaje)
+        camion.cargar(arena)
+        paqueteLadrillos.cantidadLadrillos(50)
+        camion.cargar(paqueteLadrillos)
+        bateriaAntiaerea.actualizarMisiles()
+        camion.cargar(bateriaAntiaerea)
+        assert.equals(9, camion.cantidadTotalDeBultos())
+    }
+
+
+
+    test "Total de bultos: caso 2"{
+        paqueteLadrillos.cantidadLadrillos(150)
+        camion.cargar(paqueteLadrillos)
+        camion.cargar(bateriaAntiaerea)
+        camion.cargar(contenedor)
+        assert.equals(5, camion.cantidadTotalDeBultos())
+    }    
+
+
+
+    test "Total de bultos: caso 3"{
+        paqueteLadrillos.cantidadLadrillos(350)
+        camion.cargar(paqueteLadrillos)
+        camion.cargar(arena)
+        assert.equals(4, camion.cantidadTotalDeBultos())
+    }
 }

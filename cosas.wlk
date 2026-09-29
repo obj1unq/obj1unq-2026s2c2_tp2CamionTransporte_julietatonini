@@ -6,6 +6,10 @@ object knightRider {
 
 	method nivelPeligrosidad(){ 
 		return 10 }
+
+	method cantidadBultos(){
+		return 1
+	}
 }
 
 
@@ -26,6 +30,10 @@ object arena{
 
 
 	method nivelPeligrosidad(){
+		return 1
+	}
+
+	method cantidadBultos(){
 		return 1
 	}
 }
@@ -53,6 +61,11 @@ object bumblebee {
 
 	method actualizarEstado(nuevoEstado){
 		estado = nuevoEstado
+	}
+
+
+	method cantidadBultos(){
+		return 2
 	}
 }
 
@@ -107,6 +120,17 @@ object paqueteLadrillos {
 	method nivelPeligrosidad(){
 		return 2
 	}
+
+
+	method cantidadBultos(){
+		if (self.cantidadLadrillos() <= 100) {
+			return 1
+		} else if (self.cantidadLadrillos() <= 300) {
+			return 2
+		} else {
+			return 3
+		}
+	}
 }
 
 
@@ -143,6 +167,15 @@ object bateriaAntiaerea {
 			return 0
 		}
 	}
+
+
+	method cantidadBultos(){
+		if (misiles) {
+			return 2
+		} else {
+			return 1
+		}
+	}
 }
 
 
@@ -165,6 +198,11 @@ object residuos {
 
 	method nivelPeligrosidad(){
 		return 200
+	}
+
+
+	method cantidadBultos(){
+		return 1
 	}
 }
 
@@ -202,7 +240,15 @@ object contenedor {
 		return cosas.map({cosa => cosa.nivelPeligrosidad()}).max()
 		}
 	}
+
+
+	method cantidadBultos(){
+		return 1 + cosas.sum({cosa => cosa.cantidadBultos()})
+	}
 }
+
+
+
 
 
 
@@ -228,5 +274,10 @@ object embalaje {
 
 	method nivelPeligrosidad(){
 		return envuelveA.nivelPeligrosidad() / 2
+	}
+
+
+	method cantidadBultos(){
+		return 2
 	}
 }

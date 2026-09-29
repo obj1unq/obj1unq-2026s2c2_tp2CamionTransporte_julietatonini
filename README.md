@@ -260,6 +260,7 @@ Cada elemento se puede transportar en uno o más bultos, dependiendo del element
 
 Se pide saber la cantidad total de bultos que está transportando el camión.
 
+
 #### Ejemplos
 
 ##### Caso 1
@@ -283,6 +284,20 @@ Si el camión tiene:
 - Un paquete de 350 ladrillos.
 - Arena a granel.  
 Entonces la cantidad de bultos es 4.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 2.13 Accidente
 

@@ -80,6 +80,11 @@ object camion {
 
 
 	method pesos(){
-		return cosas.map({cosa => cosa.peso()})
+		return cosas.map({cosa => cosa.peso()})     // map siempre devuelve una lista, no importa el tipo de coleccion que tome.
+	}
+
+
+	method cantidadTotalDeBultos(){
+		return cosas.sum({cosa => cosa.cantidadBultos()}) 
 	}
 }
