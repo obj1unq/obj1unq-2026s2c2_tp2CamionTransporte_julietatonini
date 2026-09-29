@@ -178,4 +178,11 @@ describe "Camion de transporte" {
     }
 
     
+
+    test "pesos de los elementos del camion"{
+        camion.cargar(bumblebee)
+        paqueteLadrillos.cantidadLadrillos(300)
+        camion.cargar(paqueteLadrillos)
+        assert.equals([800, 600], camion.pesos())
+    }
 }

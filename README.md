@@ -234,6 +234,21 @@ Conocer el peso de cada elemento que tiene el camión.
 - Para un camión cargado con Bumblebee y un paquete de 300 ladrillos, los pesos son 800 y 600.  
   Nota: ojo al armar el test, porque para Wollok [800,600] es distinto a [600,800]. A nivel de negocio da igual.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 2.12 Total de bultos
 Cada elemento se puede transportar en uno o más bultos, dependiendo del elemento en sí:
 
